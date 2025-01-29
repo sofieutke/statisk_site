@@ -10,7 +10,11 @@ img {
   height: auto;
   display: block;
   object-fit: cover;
-  align-self: stretch;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px 20px;
 }
 
 /******** Header ********/
@@ -18,8 +22,8 @@ img {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  align-items: start;
+  padding: 10px;
 }
 
 .logo img {
@@ -38,7 +42,7 @@ header {
   display: flex;
   list-style: none;
   font-size: 20px;
-  gap: 30px;
+  gap: 10px;
 }
 
 .menu:hover {
@@ -48,11 +52,7 @@ header {
 
 /********** categori boks ******/
 .category_section h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 100px;
-  margin-top: 80px;
+  margin: 80px 0 0 100px;
 }
 
 .category_list_container {
@@ -67,7 +67,7 @@ header {
   display: flex;
   text-decoration: none;
   border-radius: 8px;
-  background-color: aqua;
+  background-color: rgb(147, 142, 142);
   padding: 50px 70px;
   font-size: 20px;
 }
@@ -79,9 +79,8 @@ header {
 
 /************* Product list side *********/
 h1 {
-  margin-left: 100px;
-  margin-top: 70px;
-  font-size: 40px;
+  margin: 5vh 5vw;
+  font-size: 35px;
 }
 
 .product_list_container {
@@ -109,7 +108,7 @@ h1 {
 .product_image {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,4 +185,150 @@ h1 {
   color: black;
   padding: 10px;
   font-size: 16px;
+}
+
+/************** Produkt siden ************/
+
+h4 {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 30px;
+  opacity: 25%;
+}
+
+.product_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 80px;
+}
+
+.product_image img {
+  width: 100%;
+  height: auto;
+  margin-left: 30px;
+}
+
+.product_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.product_details h2 {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.product_details p {
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.purchase_box {
+  background: #b2b0b0;
+  padding: 50px 40px;
+  width: 80%;
+  opacity: 70%;
+  color: white;
+}
+
+.purchase_box h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.category {
+  color: rgb(40, 39, 39);
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+.add_to_cart {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add_to_cart:hover {
+  background-color: rgb(166, 166, 231);
+}
+
+/*************** Media for mindre skærme ***********/
+@media (max-width: 768px) {
+  .category_list_container,
+  .product_list_container,
+  .product_container {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .product_container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .product_details {
+    align-items: center;
+  }
+
+  .purchase_box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .category_list_container,
+  .product_list_container,
+  .product_container {
+    grid-template-columns: 1fr;
+  }
+
+  .product_container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .product_details {
+    align-items: center;
+  }
+
+  .purchase_box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+
+  .menu {
+    font-size: 12px;
+    margin-top: 10px;
+  }
 }
