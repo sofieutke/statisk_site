@@ -1,14 +1,13 @@
 const product_list_container = document.querySelector(".product_list_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`)
+fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`)
   .then((response) => response.json())
   .then((data) => showList(data));
 
-function showList(products) {
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `
+function showList(data) {
+  const markup = data
+    .map(
+      (product) => `
          <article class="product_card">
                 <a href="product.html">
                     <div class="product_image">
@@ -22,8 +21,8 @@ function showList(products) {
                     </div>
                 </a>
         </article>
-    `;
-    })
+    `
+    )
     .join("");
   product_list_container.innerHTML = markup;
 }
